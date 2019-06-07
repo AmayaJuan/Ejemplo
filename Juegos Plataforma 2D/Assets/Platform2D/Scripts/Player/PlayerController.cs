@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 6.5f;
 
     private bool jump;
+    private bool doubleJump;
 
     Animator anim;
     Rigidbody2D rb2D;
@@ -30,8 +31,22 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(rb2D.velocity.x));
         anim.SetBool("Grounded", grounded);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
-            jump = true;
+        if (grounded)
+            doubleJump = true;
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (grounded)
+            {
+                jump = true;
+                doubleJump = true;
+            }
+            else if (doubleJump)
+            {
+                jump = true;
+                doubleJump = false;
+            }
+        }
     }
 
     void FixedUpdate()
