@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af4b182a4cb89741a38af5a275c5311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallDelay: 0.5
+  respawnDelay: 3
 --- !u!1 &2377826434817722242
 GameObject:
   m_ObjectHideFlags: 0
