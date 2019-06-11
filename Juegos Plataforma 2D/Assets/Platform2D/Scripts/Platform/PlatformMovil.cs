@@ -18,12 +18,6 @@ public class PlatformMovil : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         if (target != null)
@@ -33,8 +27,6 @@ public class PlatformMovil : MonoBehaviour
         }
 
         if (transform.position == target.position)
-        {
             target.position = (target.position == start) ? end : start;
-        }
     }
 }
