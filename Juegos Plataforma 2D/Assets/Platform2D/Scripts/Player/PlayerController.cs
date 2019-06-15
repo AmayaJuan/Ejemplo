@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         movement = false;
         Invoke("EnableMovement", .7f);
         Color color = new Color(255/255f, 106/255f, 0f);
-        sr.color = color//Color.red;
+        sr.color = color;//Color.red;
     }
 
     void EnableMovement()
