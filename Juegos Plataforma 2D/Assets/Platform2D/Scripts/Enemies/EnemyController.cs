@@ -31,6 +31,15 @@ public class EnemyController : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
         else if (speed > 0)
             transform.localScale = new Vector3(-1f, 1f, 1f);
+    }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            float yOffset = .4f;
+            if (transform.position.y + yOffset < collision.transform.position.y)
+                Destroy(gameObject);
+        }
     }
 }
