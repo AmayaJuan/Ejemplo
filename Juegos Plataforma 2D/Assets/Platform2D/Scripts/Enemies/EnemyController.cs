@@ -39,7 +39,14 @@ public class EnemyController : MonoBehaviour
         {
             float yOffset = .4f;
             if (transform.position.y + yOffset < collision.transform.position.y)
+            {
+                collision.SendMessage("EnemyJump");
                 Destroy(gameObject);
+            }
+            else
+            {
+                collision.SendMessage("EnemyKnockBack", transform.position.x);
+            }
         }
     }
 }
